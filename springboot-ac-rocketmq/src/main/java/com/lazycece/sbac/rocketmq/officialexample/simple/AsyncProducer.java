@@ -1,4 +1,4 @@
-package com.lazycece.sbac.rocketmq.officialexample.producer;
+package com.lazycece.sbac.rocketmq.officialexample.simple;
 
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendCallback;

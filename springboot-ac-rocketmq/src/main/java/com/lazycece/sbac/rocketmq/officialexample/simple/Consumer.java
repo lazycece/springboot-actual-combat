@@ -1,4 +1,4 @@
-package com.lazycece.sbac.rocketmq.officialexample.consumer;
+package com.lazycece.sbac.rocketmq.officialexample.simple;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;

@@ -1,4 +1,4 @@
-package com.lazycece.sbacvalidation;
+package com.lazycece.sbac.validation;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

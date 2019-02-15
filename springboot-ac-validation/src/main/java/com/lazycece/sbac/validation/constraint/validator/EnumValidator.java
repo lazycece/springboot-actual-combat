@@ -25,9 +25,17 @@ public class EnumValidator implements ConstraintValidator<Enum, Object> {
             return false;
         }
 
-        Object[] objects = annotation.enumClazz().getEnumConstants();
-//        Method method = annotation.enumClazz().getMethod(annotation.enumValueMethod());
-
-        return true;
+        Object[] objects = annotation.clazz().getEnumConstants();
+        try {
+            Method method = annotation.clazz().getMethod(annotation.method());
+            for (Object o : objects) {
+                if (value.equals(method.invoke(o))) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 }

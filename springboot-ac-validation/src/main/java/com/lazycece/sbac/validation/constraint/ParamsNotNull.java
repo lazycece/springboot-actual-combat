@@ -1,19 +1,20 @@
-package com.lazycece.sbac.validation;
+package com.lazycece.sbac.validation.constraint;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
+import static java.lang.annotation.ElementType.*;
+
 /**
  * @author lazycece
  * @date 2019/1/15
  */
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
-@Retention(RetentionPolicy.RUNTIME)
 @Documented
-//@Constraint(
-//        validatedBy = {ParamsNotNullValidator.class}
-//)
+@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = {})
+@Repeatable(ParamsNotNull.List.class)
 public @interface ParamsNotNull {
     String[] field();
 
@@ -25,10 +26,10 @@ public @interface ParamsNotNull {
 
     Class<? extends Payload>[] payload() default {};
 
-    @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
+    @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
     @Retention(RetentionPolicy.RUNTIME)
     @Documented
-    public @interface List {
+    @interface List {
         ParamsNotNull[] value();
     }
 }

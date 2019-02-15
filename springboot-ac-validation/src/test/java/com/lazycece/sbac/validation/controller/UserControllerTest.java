@@ -35,8 +35,26 @@ public class UserControllerTest {
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                                .put("/user/add")
-                                .params(params))
+                        .put("/user/add")
+                        .params(params))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+    }
+
+    @Test
+    public void testUpdateUserInfo() throws Exception {
+
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.add("id", "1");
+        params.add("username", "lazycece");
+        params.add("age", "200");
+        params.add("sex", "2");
+        params.add("role", "3");
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders
+                        .post("/user/update")
+                        .params(params))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print());
     }

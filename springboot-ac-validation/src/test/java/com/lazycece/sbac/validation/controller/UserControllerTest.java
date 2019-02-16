@@ -29,7 +29,7 @@ public class UserControllerTest {
 
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("username", "lazycece");
-        params.add("age", "201");
+        params.add("age", "200");
         params.add("sex", "2");
         params.add("role", "3");
 

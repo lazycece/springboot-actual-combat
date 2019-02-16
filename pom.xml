@@ -6,7 +6,7 @@
     <groupId>com.lazycece</groupId>
     <artifactId>springboot-actual-combat</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>springboot-actual-combat</name>
     <description>Actual Combat Of Spring Boot</description>
@@ -22,6 +22,7 @@
         <module>springboot-ac-rocketmq</module>
         <module>springboot-ac-validation</module>
         <module>springboot-ac-swagger2</module>
+        <module>springboot-ac-elasticsearch</module>
     </modules>
 
     <properties>

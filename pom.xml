@@ -19,8 +19,9 @@
     </parent>
 
     <modules>
-        <module>springboot-ac-validation</module>
         <module>springboot-ac-rocketmq</module>
+        <module>springboot-ac-validation</module>
+        <module>springboot-ac-swagger2</module>
     </modules>
 
     <properties>

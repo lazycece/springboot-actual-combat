@@ -1,12 +1,10 @@
 package com.lazycece.sbac.elasticsearch.controller;
 
-import com.lazycece.sbac.elasticsearch.entity.Book;
-import com.lazycece.sbac.elasticsearch.repository.BookEsRepository;
+import com.lazycece.sbac.elasticsearch.entity.User;
+import com.lazycece.sbac.elasticsearch.repository.UserEsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author lazycece
@@ -16,25 +14,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/elasticsearch")
 public class ElasticsearchDemoController {
 
+    private UserEsRepository userEsRepository;
+
     @Autowired
-    private BookEsRepository bookEsRepository;
+    public ElasticsearchDemoController(UserEsRepository userEsRepository) {
+        this.userEsRepository = userEsRepository;
+    }
 
     @GetMapping("/demo")
     public Object demo() {
         return "welcome to elasticsearch cluster demo ...";
     }
 
-    @GetMapping("/book/add")
-    public Object reportBook(Book book) {
-        if (book.getName() == null || "".equals(book.getName().trim())) {
-            return "report boot fail: name is null ...";
+    @PutMapping("/user/add")
+    public Object addUserInfo(User user) {
+        if (StringUtils.isEmpty(user.getName().trim())) {
+            return "add user fail: username is null ...";
         }
-        bookEsRepository.save(book);
-        return "report book success ...";
+        userEsRepository.save(user);
+        return "add user success ...";
     }
 
-    @GetMapping("/book/info")
-    public Object bookInfo(@RequestParam String name) {
-        return bookEsRepository.findByName(name);
+    @GetMapping("/user/info")
+    public Object getUserInfo(@RequestParam String username) {
+        return userEsRepository.findByUsername(username);
     }
 }

@@ -1,52 +1,46 @@
 package com.lazycece.sbac.elasticsearch.controller;
 
-import com.lazycece.sbac.elasticsearch.entity.Book;
-import com.lazycece.sbac.elasticsearch.repository.BookEsRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import javax.annotation.Resource;
-import java.util.Date;
-import java.util.function.Consumer;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-public class ElasticsearchDemoControllerTest implements Consumer<Book>{
-
+@WebMvcTest
+public class ElasticsearchDemoControllerTest {
 
     @Resource
-    ElasticsearchTemplate elasticsearchTemplate;
-    @Resource
-    private BookEsRepository bookEsRepository;
+    private MockMvc mockMvc;
 
-	@Test
-	public void testElasticsearch() {
-        Iterable<Book> books = bookEsRepository.findAll();
-        books.forEach(this);
-        System.out.println("==================");
-	}
-
-	@Test
-    public void testElasticsearchInsert(){
-	    Book book = Book.builder()
-                .name("elasticsearch")
-                .page(1000000).reportTime(new Date())
-                .desc("report a elasticsearch boot")
-                .build();
-	    bookEsRepository.save(book);
-        System.out.println("finish insert a book of 'elasticsearch'");
+    @Test
+    public void testAddUserInfo() throws Exception {
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.add("username", "lazycece");
+        params.add("name", "W");
+        params.add("age", "99");
+        this.mockMvc.perform(
+                MockMvcRequestBuilders
+                        .put("/elasticsearch/user/add")
+                        .params(params))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
     }
 
-    @Override
-    public void accept(Book book) {
-        System.out.println(book.toString());
-    }
-
-    @Override
-    public Consumer<Book> andThen(Consumer<? super Book> after) {
-        return null;
+    @Test
+    public void testGetUserInfo() throws Exception {
+        this.mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/elasticsearch/user/info")
+                        .param("username", "lazycece"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
     }
 }

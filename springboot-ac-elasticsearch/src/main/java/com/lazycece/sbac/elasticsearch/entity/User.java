@@ -12,12 +12,13 @@ import java.util.Date;
  */
 @Data
 @Builder
-@Document(indexName = "test_index_shard_5_2",type = "doc")
-public class Book {
+@Document(indexName = "index", type = "doc")
+public class User {
 
     private String id;
+    private String username;
     private String name;
-    private Date reportTime =new Date();
-    private Integer page;
-    private String desc;
+    private Integer age;
+    private Date createTime = new Date();
+    private Date updateTime = new Date();
 }

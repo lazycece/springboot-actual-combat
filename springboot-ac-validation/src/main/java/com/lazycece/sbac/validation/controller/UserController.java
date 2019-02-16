@@ -4,10 +4,9 @@ import com.lazycece.sbac.validation.controller.req.UserInfoReq;
 import com.lazycece.sbac.validation.group.Update;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * @author lazycece
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 @Slf4j
+@Validated
 public class UserController {
 
     @PutMapping("/add")
@@ -27,6 +27,12 @@ public class UserController {
     @PostMapping("/update")
     public String updateUserInfo(@Validated(value = {Update.class}) UserInfoReq req) {
         log.info("更新用户成功: {}", req.toString());
+        return "success";
+    }
+
+    @GetMapping("/query")
+    public String queryUserInfo(@NotBlank(message = "username不能为空") String username) {
+        log.info("查询用户成功: {}", username);
         return "success";
     }
 }

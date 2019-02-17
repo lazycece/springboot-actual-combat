@@ -5,5 +5,5 @@ server:
 spring:
   data:
     elasticsearch:
-      cluster-name: elasticsearch-cluster-demo
+      cluster-name: elasticsearch-cluster
       cluster-nodes: 127.0.0.1:9300,127.0.0.1:9301,177.0.0.1:9302

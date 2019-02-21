@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.function.Consumer;
 
 @RunWith(SpringRunner.class)
@@ -22,6 +23,8 @@ public class UserEsRepositoryTest implements Consumer<User> {
                 .username("lazycece")
                 .name("W")
                 .age(99)
+                .createTime(new Date())
+                .updateTime(new Date())
                 .build();
         userEsRepository.save(user);
         System.out.println("finish insert a user");

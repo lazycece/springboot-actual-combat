@@ -1,7 +1,9 @@
 package com.lazycece.sbac.elasticsearch.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.Date;
@@ -12,6 +14,8 @@ import java.util.Date;
  */
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(indexName = "index", type = "doc")
 public class User {
 

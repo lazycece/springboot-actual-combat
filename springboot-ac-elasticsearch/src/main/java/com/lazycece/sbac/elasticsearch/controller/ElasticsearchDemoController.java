@@ -31,6 +31,10 @@ public class ElasticsearchDemoController {
         if (StringUtils.isEmpty(user.getName().trim())) {
             return "add user fail: username is null ...";
         }
+        User userFind = userEsRepository.findByUsername(user.getUsername());
+        if (userFind != null) {
+            return "add user fail: user exist";
+        }
         userEsRepository.save(user);
         return "add user success ...";
     }

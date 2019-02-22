@@ -1,0 +1,13 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+      log-condition-evaluation-delta: false
+      additional-exclude:
+      additional-paths:
+      poll-interval: 1s
+      quiet-period: 400ms
+      trigger-file:
+    livereload:
+      enabled: false
+    add-properties: true

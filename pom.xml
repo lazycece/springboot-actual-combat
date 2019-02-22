@@ -23,6 +23,8 @@
         <module>springboot-ac-validation</module>
         <module>springboot-ac-swagger2</module>
         <module>springboot-ac-elasticsearch</module>
+        <module>springboot-ac-devtools</module>
+        <module>springboot-ac-exception</module>
     </modules>
 
     <properties>

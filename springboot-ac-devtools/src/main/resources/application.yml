@@ -3,7 +3,7 @@ spring:
     restart:
       enabled: true
       log-condition-evaluation-delta: false
-      additional-exclude:
+      additional-exclude: DevtoolsExcludeController*
       additional-paths:
       poll-interval: 1s
       quiet-period: 400ms
@@ -11,3 +11,10 @@ spring:
     livereload:
       enabled: false
     add-properties: true
+
+server:
+  port: 8080
+
+
+project:
+  value: Hello, devtools !

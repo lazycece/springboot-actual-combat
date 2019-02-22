@@ -10,19 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/2/22
  */
 @RestController
-@RequestMapping("/devtools")
-public class DevtoolsController {
+@RequestMapping("/devtoolsExclude")
+public class DevtoolsExcludeController {
 
-    @Value(value = "${project.value}")
-    private String value;
 
-    @GetMapping("/clazz")
-    public Object clazz() {
-        return "this is clazz change: Hello, devtools !";
-    }
-
-    @GetMapping("/config")
-    public Object config() {
-        return "this is config change: " + value;
+    @GetMapping("/hello")
+    public Object hello() {
+        return "hello, you will not view me if you exclude me !";
     }
 }

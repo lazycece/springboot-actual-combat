@@ -25,6 +25,8 @@
         <module>springboot-ac-elasticsearch</module>
         <module>springboot-ac-devtools</module>
         <module>springboot-ac-exception</module>
+        <module>springboot-ac-response</module>
+        <module>springboot-ac-test</module>
     </modules>
 
     <properties>

@@ -3,18 +3,8 @@ spring:
     restart:
       enabled: true
       log-condition-evaluation-delta: false
-      additional-exclude: DevtoolsExcludeController*
-      additional-paths:
-      poll-interval: 1s
-      quiet-period: 400ms
-      trigger-file:
-    livereload:
-      enabled: false
-    add-properties: true
-
+      additional-exclude: "application.yml"
 server:
   port: 8080
-
-
 project:
   value: Hello, devtools !

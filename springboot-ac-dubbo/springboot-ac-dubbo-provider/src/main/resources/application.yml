@@ -1,0 +1,17 @@
+
+spring:
+  application:
+    name: springboot-dubbo-provider
+
+dubbo:
+#  application:
+#    name: #defualt is ${spring.application.name}
+  protocol:
+    name: dubbo
+    port: 28080
+  registry:
+    address: N/A
+  scan:
+    base-packages: com.lazycece.sbac.dubbo.provider.service
+  provider:
+    group: demo

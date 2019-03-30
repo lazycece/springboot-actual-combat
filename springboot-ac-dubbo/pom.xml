@@ -9,6 +9,8 @@
     </parent>
     <artifactId>springboot-ac-dubbo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <name>springboot-ac-dubbo</name>
     <description>Demo project for Spring Boot</description>
 

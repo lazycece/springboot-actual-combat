@@ -6,7 +6,6 @@
         <groupId>com.lazycece</groupId>
         <artifactId>springboot-ac-dubbo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>springboot-ac-dubbo-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>

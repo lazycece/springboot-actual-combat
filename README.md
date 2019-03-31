@@ -28,6 +28,8 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
 - springboot-ac-mongodb
   - wait
 ## 消息队列
+- springboot-ac-rabbitmq
+  - wait
 - springboot-ac-rocketmq
   - wait
   

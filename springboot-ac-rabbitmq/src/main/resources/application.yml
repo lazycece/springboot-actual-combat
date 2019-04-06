@@ -5,14 +5,3 @@ spring:
     port: 5672
     username: admin
     password: admin
-#    connection-timeout: 3000
-#    publisher-confirms: true
-#    listener:
-#      direct:
-#        acknowledge-mode:
-#      simple:
-#        acknowledge-mode:
-#        default-requeue-rejected: true
-#      type: simple
-#    template:
-#      routing-key:

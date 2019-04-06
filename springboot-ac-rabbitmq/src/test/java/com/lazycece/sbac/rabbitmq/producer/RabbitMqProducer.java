@@ -42,7 +42,7 @@ public class RabbitMqProducer {
 
     @Test
     public void topicProducer() {
-        rabbitTemplate.convertAndSend("topic.exchange", "routing-key", message);
+        rabbitTemplate.convertAndSend("topic.exchange", "routing", message);
     }
 
     @Test

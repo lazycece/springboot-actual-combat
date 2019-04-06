@@ -29,7 +29,7 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
   - wait
 ## 消息队列
 - springboot-ac-rabbitmq
-  - wait
+  - [springboot中rabbitmq的集成与使用](https://lazycece.github.io/2019/04/06/springboot%E4%B8%ADrabbitmq%E7%9A%84%E9%9B%86%E6%88%90%E4%B8%8E%E4%BD%BF%E7%94%A8/)
 - springboot-ac-rocketmq
   - wait
   

@@ -7,8 +7,11 @@
         <artifactId>springboot-ac-dubbo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
     <artifactId>springboot-ac-dubbo-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <name>springboot-ac-dubbo-api</name>
     <description>Demo project for Spring Boot</description>
 </project>

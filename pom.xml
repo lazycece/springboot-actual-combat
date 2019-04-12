@@ -26,6 +26,7 @@
         <module>springboot-ac-response</module>
         <module>springboot-ac-test</module>
         <module>springboot-ac-dubbo</module>
+        <module>springboot-ac-mysql</module>
         <module>springboot-ac-elasticsearch</module>
         <module>springboot-ac-mongodb</module>
         <module>springboot-ac-redis</module>

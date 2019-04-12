@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 使用jdbc的getGeneratedKEYS 获取数据库自增主键 -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- 开启驼峰命名转换 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--日志输出sql语句-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <typeAliases>
+        <package name="com.iflytek.migugame.wordcontest.domain.entity.mysql"/>
+    </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.user.UserStatus"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.domain.entity.basic.Status"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.pay.PayPlatform"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.pay.OrderStatus"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.pay.PurchaseType"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mongo.merchandise.GoodsType"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.iflytek.migugame.wordcontest.contest.commons.core.LoginPlatform"/>
+    </typeHandlers>
+</configuration>

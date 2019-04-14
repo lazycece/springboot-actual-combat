@@ -12,22 +12,10 @@
         <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
     <typeAliases>
-        <package name="com.iflytek.migugame.wordcontest.domain.entity.mysql"/>
+        <package name="com.lazycece.sbac.mysql"/>
     </typeAliases>
     <typeHandlers>
         <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.user.UserStatus"/>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.domain.entity.basic.Status"/>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.pay.PayPlatform"/>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.pay.OrderStatus"/>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mysql.pay.PurchaseType"/>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.domain.entity.mongo.merchandise.GoodsType"/>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.iflytek.migugame.wordcontest.contest.commons.core.LoginPlatform"/>
+                     javaType="com.lazycece.sbac.mysql.user.UserStatus"/>
     </typeHandlers>
 </configuration>

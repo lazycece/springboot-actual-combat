@@ -3,7 +3,7 @@ package com.lazycece.sbac.mysql.multi.config;
 import java.lang.annotation.*;
 
 /**
- * @author CC
+ * @author lazycece
  */
 @Documented
 @Inherited

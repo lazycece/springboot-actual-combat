@@ -1,0 +1,36 @@
+#
+#spring.data.mon
+#mongodb:
+#  default:
+#    host:
+#    port:
+#    database:
+#    username:
+#    password:
+#  log:
+#    client:
+#      # 对每个MongoDB主机最小连接数
+#      minConnectionsPerHost: 2
+#      # 对每个MongoDB主机最大连接数
+#      maxConnectionsPerHost: 20
+#      # 若连接资源耗尽，线程将阻塞
+#      connectionsPerHost: 20
+#      # 每个连接最多允许多少线程阻塞等待
+#      # 若 {阻塞线程数} > {最大连接数} * threadsAllowedToBlockForConnectionMultiplier，线程将立即得到一个异常。
+#      threadsAllowedToBlockForConnectionMultiplier: 5
+#      # 一个线程等待链接可用的最大等待毫秒数，0表示不等待
+#      maxWaitTime: 30000
+#      # 连接最大空闲毫秒数，0表示连接永不过时
+#      # 若当前连接数大于最小连接数，且连接空闲时间大于此值，连接将被释放
+#      maxConnectionIdleTime: 60000
+#      # 建立一个新连接的超时毫秒数
+#      #      connectTimeout: 10000
+#      # TCP连接的读超时毫秒数，0表示永不超时
+#  #      socketTimeout: 0
+#  #日志数据源
+#  mongo-log:
+#    host: 10.40.7.18
+#    port: 27017
+#    database: sas_multi_dev_log
+#
+#

@@ -14,8 +14,7 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import javax.annotation.Resource;
 
 /**
- * @author CC
- * 2018.04.09
+ * @author lazycece
  */
 @Configuration
 public class MongoConfig {
@@ -30,8 +29,8 @@ public class MongoConfig {
         ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());
         MongoClient mongoClient = new MongoClient(
                 serverAddress,
-                MongoCredential.createScramSha1Credential(mongoProperties.getUsername(), mongoProperties.getDatabase(), mongoProperties.getPassword()),
-                //MongoCredential.createCredential(mongoProperties.getUsername(), mongoProperties.getDatabase(), mongoProperties.getPassword()),
+                MongoCredential.createScramSha1Credential(mongoProperties.getUsername(),
+                        mongoProperties.getDatabase(), mongoProperties.getPassword()),
                 new MongoClientOptions.Builder().build());
         return new SimpleMongoDbFactory(mongoClient, mongoProperties.getDatabase());
     }

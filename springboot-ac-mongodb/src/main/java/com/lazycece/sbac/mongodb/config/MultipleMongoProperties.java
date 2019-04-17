@@ -7,21 +7,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * @author CC
- * 2018.04.09
+ * @author lazycece
  */
 @Configuration
 public class MultipleMongoProperties {
 
-    @Bean(name = "mongoDefaultProperties")
     @Primary
-    @ConfigurationProperties(prefix = "mongodb.mongo-default")
+    @Bean(name = "mongoDefaultProperties")
+    @ConfigurationProperties(prefix = "mongodb.default")
     public MongoProperties mongoDefaultProperties() {
         return new MongoProperties();
     }
 
     @Bean(name = "mongoLogProperties")
-    @ConfigurationProperties(prefix = "mongodb.mongo-log")
+    @ConfigurationProperties(prefix = "mongodb.log")
     public MongoProperties mongoLogProperties() {
         return new MongoProperties();
     }

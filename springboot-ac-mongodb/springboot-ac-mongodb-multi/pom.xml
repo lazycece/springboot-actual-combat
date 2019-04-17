@@ -4,19 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lazycece</groupId>
-        <artifactId>springboot-actual-combat</artifactId>
+        <artifactId>springboot-ac-mongodb</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>springboot-ac-mongodb</artifactId>
+    <artifactId>springboot-ac-mongodb-multi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <name>springboot-ac-mongodb</name>
+    <name>springboot-ac-mongodb-multi</name>
     <description>Demo project for Spring Boot</description>
-
-    <modules>
-        <module>springboot-ac-mongodb-multi</module>
-    </modules>
 
     <dependencies>
         <dependency>

@@ -1,4 +1,4 @@
-package com.lazycece.sbac.mongodb.config;
+package com.lazycece.sbac.mongodb.multi.config;
 
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.lazycece.sbac.mongodb.config;
+package com.lazycece.sbac.mongodb.multi.config;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;

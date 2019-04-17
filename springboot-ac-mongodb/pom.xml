@@ -15,6 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
+        <module>springboot-ac-mongodb-simple</module>
         <module>springboot-ac-mongodb-multi</module>
     </modules>
 

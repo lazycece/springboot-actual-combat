@@ -15,7 +15,7 @@
         <package name="com.lazycece.sbac.mysql.data.domain"/>
     </typeAliases>
     <typeHandlers>
-        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"-->
-                     <!--javaType="com.lazycece.sbac.mysql.data.domain"/>-->
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.lazycece.sbac.mysql.data.domain.Status"/>
     </typeHandlers>
 </configuration>

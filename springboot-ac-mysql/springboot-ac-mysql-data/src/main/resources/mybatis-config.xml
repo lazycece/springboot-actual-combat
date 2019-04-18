@@ -12,10 +12,10 @@
         <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
     <typeAliases>
-        <package name="com.lazycece.sbac.mysql"/>
+        <package name="com.lazycece.sbac.mysql.data.domain"/>
     </typeAliases>
     <typeHandlers>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
-                     javaType="com.lazycece.sbac.mysql.user.UserStatus"/>
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"-->
+                     <!--javaType="com.lazycece.sbac.mysql.data.domain"/>-->
     </typeHandlers>
 </configuration>

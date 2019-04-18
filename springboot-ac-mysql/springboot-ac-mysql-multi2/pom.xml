@@ -7,9 +7,9 @@
 		<artifactId>springboot-ac-mysql</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>springboot-ac-mysql-multi</artifactId>
+	<artifactId>springboot-ac-mysql-multi2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-ac-mysql-multi</name>
+	<name>springboot-ac-mysql-multi2</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
@@ -20,8 +20,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

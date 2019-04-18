@@ -7,25 +7,24 @@
 		<artifactId>springboot-ac-mysql</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>springboot-ac-mysql-multi</artifactId>
+	<artifactId>springboot-ac-mysql-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-ac-mysql-multi</name>
+	<packaging>pom</packaging>
+
+	<name>springboot-ac-mysql-data</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.lazycece</groupId>
-			<artifactId>springboot-ac-mysql-data</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.0.1</version>
 		</dependency>
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 

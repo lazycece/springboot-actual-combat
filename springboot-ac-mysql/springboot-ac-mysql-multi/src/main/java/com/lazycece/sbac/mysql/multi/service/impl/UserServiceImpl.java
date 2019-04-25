@@ -25,12 +25,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @DataSource(value = MultiDataSource.MASTER_DATA_SOURCE)
     public void addUserInfo(User user) {
-
+        userDao.insert(user);
     }
 
     @Override
     @DataSource(value = MultiDataSource.SLAVE_DATA_SOURCE)
     public User getUserInfo(String username) {
-        return null;
+        return userDao.findByUsername(username);
     }
 }

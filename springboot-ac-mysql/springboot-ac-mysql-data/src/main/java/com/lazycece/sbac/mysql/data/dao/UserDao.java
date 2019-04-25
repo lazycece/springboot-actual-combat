@@ -1,14 +1,17 @@
 package com.lazycece.sbac.mysql.data.dao;
 
 import com.lazycece.sbac.mysql.data.domain.User;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author lazycece
  * @date 2019/4/18
  */
-@Repository
+@Mapper
 public interface UserDao {
 
     User insert(User user);
+
+    User findByUsername(@Param("username") String username);
 }

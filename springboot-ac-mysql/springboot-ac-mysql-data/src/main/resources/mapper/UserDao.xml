@@ -14,4 +14,11 @@
         VALUES (#{createTime},#{updateTime},#{username},#{password},#{telephone},#{status},#{editor});
     </insert>
 
+    <select id="findByUsername" resultType="User">
+        SELECT
+        <include refid="callColumn"/>
+        FROM user
+        WHERE username = #{username};
+    </select>
+
 </mapper>

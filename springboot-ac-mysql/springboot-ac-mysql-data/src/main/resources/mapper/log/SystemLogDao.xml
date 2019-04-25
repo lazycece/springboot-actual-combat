@@ -1,0 +1,24 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lazycece.sbac.mysql.data.dao.log.SystemLogDao">
+
+    <sql id="allColumn">
+        id,create_time,editor,operation
+    </sql>
+
+    <insert id="insert" parameterType="SystemLog" useGeneratedKeys="true" keyProperty="id">
+        INSERT  INTO
+        system_log (create_time,editor,operation)
+        VALUE (#{createTime},#{editor},#{operation});
+    </insert>
+
+    <select id="findByCreateTime" resultType="SystemLog">
+        SELECT
+        <include refid="allColumn"/>
+        FROM system_log
+        WHERE create_time &gt;= #{beginTime} AND create_time &lt;= #{endTIme};
+    </select>
+
+</mapper>

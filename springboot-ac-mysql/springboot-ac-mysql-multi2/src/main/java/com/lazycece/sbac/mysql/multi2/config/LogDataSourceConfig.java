@@ -18,11 +18,13 @@ import javax.sql.DataSource;
  * @date 2019/4/25
  */
 @Configuration
-@MapperScan(basePackages = {"com.lazycece.sbac.mysql.dao"})
+@MapperScan(basePackages = {"com.lazycece.sbac.mysql.dao.log"},
+        sqlSessionFactoryRef = "logSqlSessionFactory",
+        sqlSessionTemplateRef = "logSqlSessionTemplate")
 public class LogDataSourceConfig {
 
-    @ConfigurationProperties(prefix = "datasource.log")
     @Bean(name = "logDataSource")
+    @ConfigurationProperties(prefix = "datasource.log")
     public DataSource slaveDataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -30,19 +32,18 @@ public class LogDataSourceConfig {
 
     @Bean(name = "logSqlSessionFactory")
     public SqlSessionFactory sentinelSqlSessionFactory(@Qualifier("logDataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(dataSource);
-        return bean.getObject();
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource);
+        return sqlSessionFactoryBean.getObject();
     }
 
-    @Bean(name = "masterTransactionManager")
+    @Bean(name = "logTransactionManager")
     public DataSourceTransactionManager sentinelTransactionManager(@Qualifier("logDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = "sentinelSqlSessionTemplate")
+    @Bean(name = "logSqlSessionTemplate")
     public SqlSessionTemplate sentinelSqlSessionTemplate(@Qualifier("logSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
-
 }

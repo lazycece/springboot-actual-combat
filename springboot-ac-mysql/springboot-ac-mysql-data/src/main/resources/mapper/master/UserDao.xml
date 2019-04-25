@@ -2,7 +2,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.lazycece.sbac.mysql.data.dao.UserDao">
+<mapper namespace="com.lazycece.sbac.mysql.data.dao.master.UserDao">
 
     <sql id="allColumn">
         id,create_time,update_time,username,password,telephone,status,editor
@@ -11,12 +11,12 @@
     <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         INSERT  INTO
         user (create_time,update_time,username,password,telephone,status,editor)
-        VALUES (#{createTime},#{updateTime},#{username},#{password},#{telephone},#{status},#{editor});
+        VALUE (#{createTime},#{updateTime},#{username},#{password},#{telephone},#{status},#{editor});
     </insert>
 
     <select id="findByUsername" resultType="User">
         SELECT
-        <include refid="callColumn"/>
+        <include refid="allColumn"/>
         FROM user
         WHERE username = #{username};
     </select>

@@ -1,4 +1,4 @@
-package com.lazycece.sbac.mysql.data.dao;
+package com.lazycece.sbac.mysql.data.dao.master;
 
 import com.lazycece.sbac.mysql.data.domain.User;
 import org.apache.ibatis.annotations.Mapper;

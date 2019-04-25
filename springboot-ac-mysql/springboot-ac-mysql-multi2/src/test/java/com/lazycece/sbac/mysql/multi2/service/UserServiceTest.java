@@ -1,4 +1,4 @@
-package com.lazycece.sbac.mysql.multi.service;
+package com.lazycece.sbac.mysql.multi2.service;
 
 import com.lazycece.sbac.mysql.data.domain.Status;
 import com.lazycece.sbac.mysql.data.domain.User;

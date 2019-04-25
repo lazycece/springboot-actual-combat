@@ -19,36 +19,35 @@ import javax.sql.DataSource;
  * @date 2019/4/25
  */
 @Configuration
-@MapperScan(basePackages = {"com.lazycece.sbac.mysql.dao"})
+@MapperScan(basePackages = {"com.lazycece.sbac.mysql.dao.master"},
+        sqlSessionFactoryRef = "masterSqlSessionFactory",
+        sqlSessionTemplateRef = "masterSqlSessionTemplate")
 public class MasterDataSourceConfig {
 
-
-    @ConfigurationProperties(prefix = "datasource.master")
     @Primary
     @Bean(name = "masterDataSource")
+    @ConfigurationProperties(prefix = "datasource.master")
     public DataSource masterDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "masterSqlSessionFactory")
     @Primary
+    @Bean(name = "masterSqlSessionFactory")
     public SqlSessionFactory sentinelSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(dataSource);
-        return bean.getObject();
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource);
+        return sqlSessionFactoryBean.getObject();
     }
 
-    @Bean(name = "masterTransactionManager")
     @Primary
+    @Bean(name = "masterTransactionManager")
     public DataSourceTransactionManager sentinelTransactionManager(@Qualifier("masterDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = "sentinelSqlSessionTemplate")
     @Primary
+    @Bean(name = "masterSqlSessionTemplate")
     public SqlSessionTemplate sentinelSqlSessionTemplate(@Qualifier("masterSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
-
-
 }

@@ -1,6 +1,7 @@
 package com.lazycece.sbac.mysql.data.domain;
 
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.Date;
 
@@ -9,6 +10,7 @@ import java.util.Date;
  * @date 2019/4/18
  */
 @Data
+@ToString
 public class User {
 
     private Long id;

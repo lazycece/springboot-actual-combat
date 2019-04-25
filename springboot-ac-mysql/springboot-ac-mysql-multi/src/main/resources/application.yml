@@ -2,3 +2,8 @@
 mybatis:
   config-location: classpath:
   mapper-locations:
+
+datasource:
+  master:
+
+  slave:

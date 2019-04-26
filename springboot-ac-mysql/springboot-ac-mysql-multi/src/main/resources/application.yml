@@ -6,4 +6,4 @@ mybatis:
 datasource:
   master:
 
-  slave:
+  log:

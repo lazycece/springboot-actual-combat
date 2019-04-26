@@ -1,8 +1,4 @@
 
-mybatis:
-  config-location: classpath:
-  mapper-locations:
-
 datasource:
   master:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -16,3 +12,7 @@ datasource:
     username: root
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*

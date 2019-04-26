@@ -16,6 +16,7 @@
 
 	<modules>
 		<module>springboot-ac-mysql-data</module>
+		<module>springboot-ac-mysql-simple</module>
 		<module>springboot-ac-mysql-multi</module>
 		<module>springboot-ac-mysql-multi2</module>
 	</modules>

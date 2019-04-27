@@ -19,6 +19,6 @@
                      javaType="com.lazycece.sbac.mysql.data.domain.Status"/>
     </typeHandlers>
     <mappers>
-        <package name="com.lazycece.sbac.mysql.data.dao"/>
+        <package name="com.lazycece.sbac.mysql.data.dao.*.mapper"/>
     </mappers>
 </configuration>

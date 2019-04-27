@@ -4,6 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
@@ -18,18 +19,21 @@ public class MultiDataSource {
     public static final String MASTER_DATA_SOURCE = "masterDataSource";
     public static final String LOG_DATA_SOURCE = "logDataSource";
 
+    @Bean(name = MultiDataSource.MASTER_DATA_SOURCE)
     @ConfigurationProperties(prefix = "datasource.master")
-    private DataSource masterDataSource() {
+    public DataSource masterDataSource() {
         return DataSourceBuilder.create().build();
     }
 
+    @Bean(name = MultiDataSource.LOG_DATA_SOURCE)
     @ConfigurationProperties(prefix = "datasource.log")
-    private DataSource logDataSource() {
+    public DataSource logDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "dataSource")
-    public DataSource dataSource() {
+    @Primary
+    @Bean(name = "dynamicDataSource")
+    public DynamicDataSource dataSource() {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         dynamicDataSource.setDefaultTargetDataSource(masterDataSource());
         Map<Object, Object> dataSourceMap = new HashMap<>(4);

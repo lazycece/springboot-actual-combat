@@ -43,7 +43,7 @@ public class LogDataSourceConfig {
     }
 
     @Bean(name = "logSqlSessionTemplate")
-    public SqlSessionTemplate sentinelSqlSessionTemplate(@Qualifier("logSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate sentinelSqlSessionTemplate(@Qualifier("logSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }

@@ -40,7 +40,7 @@ public class DynamicDataSourceServiceTest {
     @Test
     public void testGetUserInfo() {
         User user = dynamicDataSourceService.getUserInfo("lazycece");
-        System.out.println(user.toString());
+        System.out.println(user);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class DynamicDataSourceServiceTest {
     public void testGetSystemLogInfo() throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date beginTime = format.parse("2019-04-25");
-        Date endTime = format.parse("2019-04-26");
+        Date endTime = format.parse("2019-04-28");
         List<SystemLog> systemLogList =
                 dynamicDataSourceService.getSystemLogInfo(beginTime, endTime);
         System.out.println(systemLogList.toString());

@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface SystemLogDao {
 
-    SystemLog insert(SystemLog systemLog);
+    void insert(SystemLog systemLog);
 
     List<SystemLog> findByCreateTime(@Param("beginTime") Date beginTime, @Param("endTime") Date endTime);
 }

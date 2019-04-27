@@ -18,7 +18,7 @@
         SELECT
         <include refid="allColumn"/>
         FROM system_log
-        WHERE create_time &gt;= #{beginTime} AND create_time &lt;= #{endTIme};
+        WHERE create_time &gt;= #{beginTime} AND create_time &lt;= #{endTime};
     </select>
 
 </mapper>

@@ -47,7 +47,7 @@ public class MasterDataSourceConfig {
 
     @Primary
     @Bean(name = "masterSqlSessionTemplate")
-    public SqlSessionTemplate sentinelSqlSessionTemplate(@Qualifier("masterSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate sentinelSqlSessionTemplate(@Qualifier("masterSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }

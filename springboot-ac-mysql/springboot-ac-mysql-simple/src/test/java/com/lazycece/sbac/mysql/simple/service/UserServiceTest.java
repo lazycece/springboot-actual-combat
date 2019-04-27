@@ -1,4 +1,4 @@
-package com.lazycece.sbac.mysql.multi2.service;
+package com.lazycece.sbac.mysql.simple.service;
 
 import com.lazycece.sbac.mysql.data.domain.Status;
 import com.lazycece.sbac.mysql.data.domain.User;
@@ -24,7 +24,7 @@ public class UserServiceTest {
     @Test
     public void testAddUserInfo() {
         User user = new User();
-        user.setUsername("multi2");
+        user.setUsername("simple");
         user.setPassword("123456");
         user.setTelephone("18888888888");
         user.setEditor("admin");
@@ -36,7 +36,7 @@ public class UserServiceTest {
 
     @Test
     public void testGetUserInfo() {
-        User user = userService.getUserInfo("multi2");
+        User user = userService.getUserInfo("simple");
         System.out.println(user.toString());
     }
 }

@@ -37,6 +37,6 @@ public class UserServiceTest {
     @Test
     public void testGetUserInfo() {
         User user = userService.getUserInfo("multi2");
-        System.out.println(user.toString());
+        System.out.println(user);
     }
 }

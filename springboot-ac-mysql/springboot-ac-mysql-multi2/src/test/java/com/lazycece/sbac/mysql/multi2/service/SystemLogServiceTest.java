@@ -26,7 +26,7 @@ public class SystemLogServiceTest {
     public void testAddSystemLog() {
         SystemLog systemLog = new SystemLog();
         systemLog.setEditor("lazycece");
-        systemLog.setOperation("create a user: lazycece");
+        systemLog.setOperation("create a user: multi2");
         systemLog.setCreateTime(new Date());
         systemLogService.addSystemLog(systemLog);
     }
@@ -35,7 +35,7 @@ public class SystemLogServiceTest {
     public void testGetSystemLogInfo() throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date beginTime = format.parse("2019-04-25");
-        Date endTime = format.parse("2019-04-26");
+        Date endTime = format.parse("2019-04-28");
         List<SystemLog> systemLogList =
                 systemLogService.getSystemLogInfo(beginTime, endTime);
         System.out.println(systemLogList.toString());

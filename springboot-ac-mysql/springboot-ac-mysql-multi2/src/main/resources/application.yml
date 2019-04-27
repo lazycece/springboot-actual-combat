@@ -14,4 +14,5 @@ datasource:
 
 mybatis:
   config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:com/lazycece/sbac/mysql/data/dao/*/mapper
+  mapper-locations: classpath:com/lazycece/sbac/mysql/data/dao/*/mapper/*.xml
+

@@ -10,17 +10,8 @@
 
     <artifactId>springboot-ac-dubbo-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>springboot-ac-dubbo-api</name>
     <description>Demo project for Spring Boot</description>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>

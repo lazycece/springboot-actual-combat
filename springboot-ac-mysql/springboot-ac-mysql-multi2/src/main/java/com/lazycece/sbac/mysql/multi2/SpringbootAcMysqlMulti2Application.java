@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(
-        exclude = {DataSourceAutoConfiguration.class},
-        scanBasePackages = {"com.lazycece.sbac.mysql.*"})
+        exclude = {DataSourceAutoConfiguration.class})
 @MapperScan(basePackages = {"com.lazycece.sbac.mysql.data.dao"})
 public class SpringbootAcMysqlMulti2Application {
 

@@ -6,7 +6,6 @@
         <groupId>com.lazycece</groupId>
         <artifactId>springboot-ac-mysql</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>springboot-ac-mysql-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>

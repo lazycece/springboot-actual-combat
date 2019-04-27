@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * @date 2019/4/25
  */
 @Configuration
-@MapperScan(basePackages = {"com.lazycece.sbac.mysql.dao.master"},
+@MapperScan(basePackages = {"com.lazycece.sbac.mysql.data.dao.master"},
         sqlSessionFactoryRef = "masterSqlSessionFactory",
         sqlSessionTemplateRef = "masterSqlSessionTemplate")
 public class MasterDataSourceConfig {

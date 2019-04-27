@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2019/4/25
  */
 @Configuration
-@MapperScan(basePackages = {"com.lazycece.sbac.mysql.dao.log"},
+@MapperScan(basePackages = {"com.lazycece.sbac.mysql.data.dao.log"},
         sqlSessionFactoryRef = "logSqlSessionFactory",
         sqlSessionTemplateRef = "logSqlSessionTemplate")
 public class LogDataSourceConfig {

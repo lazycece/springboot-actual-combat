@@ -1,8 +1,10 @@
 spring:
   data:
     mongodb:
-      uri:
-      database:
-      port:
-      username:
-      password: 
+#      uri: mongodb://127.0.0.1:27017/sbac_master
+      host: 127.0.0.1
+      port: 27017
+      username: sbac
+      password: sbac
+      database: sbac_master
+

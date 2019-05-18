@@ -2,6 +2,7 @@ package com.lazycece.sbac.mongodb.multi.repository;
 
 import com.lazycece.sbac.mongodb.multi.entity.SystemLog;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -20,7 +21,7 @@ public class SystemLogRepository {
     private MongoTemplate mongoLogTemplate;
 
     @Autowired
-    public SystemLogRepository(MongoTemplate mongoLogTemplate) {
+    public SystemLogRepository(@Qualifier("mongoLogTemplate") MongoTemplate mongoLogTemplate) {
         this.mongoLogTemplate = mongoLogTemplate;
     }
 

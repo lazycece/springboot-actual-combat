@@ -15,7 +15,7 @@ import java.util.Date;
 @Document(collection = "system_log")
 public class SystemLog {
 
-    private Long id;
+    private String id;
     private String editor;
     private String operation;
     private Date createTime;

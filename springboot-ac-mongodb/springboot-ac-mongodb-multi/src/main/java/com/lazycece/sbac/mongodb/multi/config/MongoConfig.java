@@ -46,12 +46,13 @@ public class MongoConfig {
     }
 
     private MongoDbFactory mongoDbFactory(MongoProperties mongoProperties) {
-        ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());
-        MongoClient mongoClient = new MongoClient(
-                serverAddress,
-                MongoCredential.createScramSha1Credential(mongoProperties.getUsername(),
-                        mongoProperties.getDatabase(), mongoProperties.getPassword()),
-                new MongoClientOptions.Builder().build());
+//        ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());
+//        MongoClient mongoClient = new MongoClient(
+//                serverAddress,
+//                MongoCredential.createScramSha1Credential(mongoProperties.getUsername(),
+//                        mongoProperties.getDatabase(), mongoProperties.getPassword()),
+//                new MongoClientOptions.Builder().build());
+        MongoClient mongoClient = new MongoClient(mongoProperties.getHost(),mongoProperties.getPort());
         return new SimpleMongoDbFactory(mongoClient, mongoProperties.getDatabase());
     }
 }

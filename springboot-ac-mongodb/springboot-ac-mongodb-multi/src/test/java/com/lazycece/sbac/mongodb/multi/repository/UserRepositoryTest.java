@@ -3,7 +3,7 @@ package com.lazycece.sbac.mongodb.multi.repository;
 import com.lazycece.sbac.mongodb.multi.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -13,7 +13,7 @@ import java.util.Date;
  * @author lazycece
  * @date 2019/05/06
  */
-@DataJpaTest
+@SpringBootTest
 @RunWith(SpringRunner.class)
 public class UserRepositoryTest {
 

@@ -14,20 +14,20 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserRepository {
 
-    private MongoTemplate mongoMasterTemplate;
+    private MongoTemplate mongoTemplate;
 
     @Autowired
-    public UserRepository(MongoTemplate mongoMasterTemplate) {
-        this.mongoMasterTemplate = mongoMasterTemplate;
+    public UserRepository(MongoTemplate mongoTemplate) {
+        this.mongoTemplate = mongoTemplate;
     }
 
     public void insert(User user) {
-        mongoMasterTemplate.insert(user);
+        mongoTemplate.insert(user);
     }
 
     public User findByUsername(String username) {
         Query query = new Query();
         query.addCriteria(Criteria.where("username").is(username));
-        return mongoMasterTemplate.findOne(query, User.class);
+        return mongoTemplate.findOne(query, User.class);
     }
 }

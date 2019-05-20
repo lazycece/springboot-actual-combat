@@ -32,6 +32,7 @@
         <module>springboot-ac-redis</module>
         <module>springboot-ac-rabbitmq</module>
         <module>springboot-ac-rocketmq</module>
+        <module>springboot-ac-email</module>
     </modules>
 
     <properties>

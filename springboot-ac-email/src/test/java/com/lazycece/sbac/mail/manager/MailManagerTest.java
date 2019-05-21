@@ -21,8 +21,8 @@ public class MailManagerTest {
 
     private Message.MessageBuilder commonMail() {
         return Message.builder()
-                .from("lazycece@gmail.com")
-                .to("lazycece@gmail.com")
+                .from("lazycece@163.com")
+                .to("lazycece@163.com")
                 .subject("你好");
     }
 

@@ -2,6 +2,6 @@ spring:
   mail:
     host: smtp.163.com
     port: 25
-    username: lazycece@gmail.com
+    username: lazycece@163.com
     # 客户端授权码
     password:

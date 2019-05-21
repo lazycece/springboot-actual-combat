@@ -56,7 +56,7 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
   
 ## tool
 - springboot-ac-email
-  - wait
+  - [springboot中实现发送邮件功能](https://lazycece.github.io/2019/05/21/springboot%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/)
 - springboot-ac-schedule
   - wait
 - springboot-ac-log

@@ -21,43 +21,58 @@ public class MailManagerTest {
 
     @Test
     public void testSendSimpleMessage() {
-        Message message = Message.builder().to("").text("").build();
+        Message message = Message.builder()
+                .from("lazycece@163.com")
+                .to("lazycece@qq.com")
+                .subject("你好")
+                .text("Hello, simple message ! ")
+                .build();
         mailManager.sendSimpleMessage(message);
     }
 
     @Test
     public void testSendPreparatorMimeMessage() {
         Message message = Message.builder()
-                .to("")
-                .text("").build();
+                .from("lazycece@163.com")
+                .to("lazycece@qq.com")
+                .subject("你好")
+                .text("Hello, preparator mime message ! ")
+                .build();
         mailManager.sendPreparatorMimeMessage(message);
     }
 
     @Test
     public void sendBasicMimeMessage() {
         Message message = Message.builder()
-                .to("")
-                .text("").build();
+                .to("lazycece@qq.com")
+                .from("lazycece@163.com")
+                .subject("你好")
+                .text("Hello, basic mime email ! ")
+                .build();
         mailManager.sendBasicMimeMessage(message);
     }
 
     @Test
     public void sendAttachmentsMimeMessage() {
         Message message = Message.builder()
-                .to("")
-                .text("")
-                .attachment("").build();
+                .to("lazycece@qq.com")
+                .from("lazycece@163.com")
+                .subject("你好")
+                .text("Hello, attachment mime email ! ")
+                .attachment("C:\\Users\\CC\\Downloads\\CigHElziSRiACkYtAAOKkkCI_Fs222.wav")
+                .build();
         mailManager.sendAttachmentsMimeMessage(message);
     }
 
     @Test
     public void sendInlineImageMimeMessage() {
         Message message = Message.builder()
-                .to("")
-                .text("")
-                .inlineResource("").build();
+                .to("lazycece@qq.com")
+                .from("lazycece@163.com")
+                .subject("你好")
+                .text("Hello, inline image mime email ! ")
+                .inlineResource("F:\\lazycc\\bicycle-minimalistic-art-1.jpg")
+                .build();
         mailManager.sendInlineImageMimeMessage(message);
     }
-
-
 }

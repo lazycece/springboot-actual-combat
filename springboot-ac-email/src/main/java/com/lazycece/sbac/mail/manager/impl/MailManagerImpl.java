@@ -38,9 +38,9 @@ public class MailManagerImpl implements MailManager {
     @Override
     public void sendSimpleMessage(Message message) {
         SimpleMailMessage msg = new SimpleMailMessage();
-//        msg.setFrom();
-//        msg.setSubject();
+        msg.setFrom(message.getFrom());
         msg.setTo(message.getTo());
+        msg.setSubject(message.getSubject());
         msg.setText(message.getText());
         mailSender.send(msg);
     }
@@ -48,8 +48,9 @@ public class MailManagerImpl implements MailManager {
     @Override
     public void sendPreparatorMimeMessage(Message message) {
         MimeMessagePreparator preparator = mimeMessage -> {
+            mimeMessage.setFrom(message.getFrom());
             mimeMessage.setRecipients(javax.mail.Message.RecipientType.TO, message.getTo());
-//                mimeMessage.setFrom("");
+            mimeMessage.setSubject(message.getSubject());
             mimeMessage.setText(message.getText());
         };
         javaMailSender.send(preparator);
@@ -61,9 +62,11 @@ public class MailManagerImpl implements MailManager {
         try {
             MimeMessageHelper helper = mimeMailMessage.getMimeMessageHelper();
             helper.setTo(message.getTo());
+            helper.setFrom(message.getFrom());
+            helper.setSubject(message.getSubject());
             helper.setText(message.getText());
         } catch (MessagingException e) {
-            log.error("build message error");
+            log.error("build mail message error");
         }
         javaMailSender.send(mimeMailMessage.getMimeMessage());
 
@@ -73,13 +76,15 @@ public class MailManagerImpl implements MailManager {
     public void sendAttachmentsMimeMessage(Message message) {
         MimeMailMessage mimeMailMessage = new MimeMailMessage(javaMailSender.createMimeMessage());
         try {
-            MimeMessageHelper helper = mimeMailMessage.getMimeMessageHelper();
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMailMessage.getMimeMessage(), true);
+            helper.setFrom(message.getFrom());
             helper.setTo(message.getTo());
+            helper.setSubject(message.getSubject());
             helper.setText(message.getText());
             FileSystemResource file = new FileSystemResource(new File(message.getAttachment()));
             helper.addAttachment("attachment", file);
         } catch (MessagingException e) {
-            log.error("build message error");
+            log.error("build mail message error");
         }
         javaMailSender.send(mimeMailMessage.getMimeMessage());
     }
@@ -88,14 +93,16 @@ public class MailManagerImpl implements MailManager {
     public void sendInlineImageMimeMessage(Message message) {
         MimeMailMessage mimeMailMessage = new MimeMailMessage(javaMailSender.createMimeMessage());
         try {
-            MimeMessageHelper helper = mimeMailMessage.getMimeMessageHelper();
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMailMessage.getMimeMessage(), true);
+            helper.setFrom(message.getFrom());
             helper.setTo(message.getTo());
+            helper.setSubject(message.getSubject());
             String html = "<html><body><img src='cid:inline-resource'></body></html>";
             helper.setText(message.getText(), html);
             FileSystemResource resource = new FileSystemResource(new File(message.getInlineResource()));
             helper.addAttachment("inline-resource", resource);
         } catch (MessagingException e) {
-            log.error("build message error");
+            log.error("build mail message error");
         }
         javaMailSender.send(mimeMailMessage.getMimeMessage());
     }

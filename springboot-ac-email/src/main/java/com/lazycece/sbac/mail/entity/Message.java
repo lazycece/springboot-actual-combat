@@ -20,6 +20,14 @@ public class Message {
      */
     private String to;
     /**
+     * 发件人
+     */
+    private String from;
+    /**
+     * 邮件主题
+     */
+    private String subject;
+    /**
      * 邮件内容
      */
     private String text;

@@ -19,12 +19,16 @@ public class MailManagerTest {
     @Resource
     private MailManager mailManager;
 
-    @Test
-    public void testSendSimpleMessage() {
-        Message message = Message.builder()
+    private Message.MessageBuilder commonMail() {
+        return Message.builder()
                 .from("lazycece@163.com")
                 .to("lazycece@qq.com")
-                .subject("你好")
+                .subject("你好");
+    }
+
+    @Test
+    public void testSendSimpleMessage() {
+        Message message = commonMail()
                 .text("Hello, simple message ! ")
                 .build();
         mailManager.sendSimpleMessage(message);
@@ -32,10 +36,7 @@ public class MailManagerTest {
 
     @Test
     public void testSendPreparatorMimeMessage() {
-        Message message = Message.builder()
-                .from("lazycece@163.com")
-                .to("lazycece@qq.com")
-                .subject("你好")
+        Message message = commonMail()
                 .text("Hello, preparator mime message ! ")
                 .build();
         mailManager.sendPreparatorMimeMessage(message);
@@ -43,10 +44,7 @@ public class MailManagerTest {
 
     @Test
     public void sendBasicMimeMessage() {
-        Message message = Message.builder()
-                .to("lazycece@qq.com")
-                .from("lazycece@163.com")
-                .subject("你好")
+        Message message = commonMail()
                 .text("Hello, basic mime email ! ")
                 .build();
         mailManager.sendBasicMimeMessage(message);
@@ -54,24 +52,18 @@ public class MailManagerTest {
 
     @Test
     public void sendAttachmentsMimeMessage() {
-        Message message = Message.builder()
-                .to("lazycece@qq.com")
-                .from("lazycece@163.com")
-                .subject("你好")
+        Message message = commonMail()
                 .text("Hello, attachment mime email ! ")
-                .attachment("C:\\Users\\CC\\Downloads\\CigHElziSRiACkYtAAOKkkCI_Fs222.wav")
+                .attachment("/home/lazycece/下载/rabbitmq-cluster-framework.png")
                 .build();
         mailManager.sendAttachmentsMimeMessage(message);
     }
 
     @Test
     public void sendInlineImageMimeMessage() {
-        Message message = Message.builder()
-                .to("lazycece@qq.com")
-                .from("lazycece@163.com")
-                .subject("你好")
+        Message message = commonMail()
                 .text("Hello, inline image mime email ! ")
-                .inlineResource("F:\\lazycc\\bicycle-minimalistic-art-1.jpg")
+                .inlineResource("/home/lazycece/下载/rabbitmq-cluster-framework.png")
                 .build();
         mailManager.sendInlineImageMimeMessage(message);
     }

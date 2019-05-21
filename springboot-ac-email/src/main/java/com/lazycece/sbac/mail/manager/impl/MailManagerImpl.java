@@ -82,7 +82,7 @@ public class MailManagerImpl implements MailManager {
             helper.setSubject(message.getSubject());
             helper.setText(message.getText());
             FileSystemResource file = new FileSystemResource(new File(message.getAttachment()));
-            helper.addAttachment("attachment", file);
+            helper.addAttachment(file.getFilename(), file);
         } catch (MessagingException e) {
             log.error("build mail message error");
         }
@@ -97,10 +97,10 @@ public class MailManagerImpl implements MailManager {
             helper.setFrom(message.getFrom());
             helper.setTo(message.getTo());
             helper.setSubject(message.getSubject());
-            String html = "<html><body><img src='cid:inline-resource'></body></html>";
+            String html = "<html><body><img src='cid:resource1234'></body></html>";
             helper.setText(message.getText(), html);
             FileSystemResource resource = new FileSystemResource(new File(message.getInlineResource()));
-            helper.addAttachment("inline-resource", resource);
+            helper.addInline("resource1234", resource);
         } catch (MessagingException e) {
             log.error("build mail message error");
         }

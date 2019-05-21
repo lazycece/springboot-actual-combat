@@ -1,0 +1,7 @@
+spring:
+  mail:
+#    properties:
+    host: smtp.163.com
+    port: 25
+    username: lazycece@163.com
+    password: lazycece931114

@@ -54,7 +54,7 @@ public class MailManagerTest {
     public void sendAttachmentsMimeMessage() {
         Message message = commonMail()
                 .text("Hello, attachment mime email ! ")
-                .attachment("/home/lazycece/下载/rabbitmq-cluster-framework.png")
+                .attachment("/home/lazycece/下载/temp.png")
                 .build();
         mailManager.sendAttachmentsMimeMessage(message);
     }
@@ -63,7 +63,7 @@ public class MailManagerTest {
     public void sendInlineImageMimeMessage() {
         Message message = commonMail()
                 .text("Hello, inline image mime email ! ")
-                .inlineResource("/home/lazycece/下载/rabbitmq-cluster-framework.png")
+                .inlineResource("/home/lazycece/下载/temp.png")
                 .build();
         mailManager.sendInlineImageMimeMessage(message);
     }

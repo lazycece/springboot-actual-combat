@@ -6,7 +6,7 @@
 	<groupId>com.lazycece</groupId>
 	<artifactId>springboot-ac-swagger2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sb-ac-swagger2</name>
+	<name>springboot-ac-swagger2</name>
 	<description>Demo project for Spring Boot</description>
 
     <parent>

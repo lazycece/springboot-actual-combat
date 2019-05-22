@@ -22,8 +22,7 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
 - springboot-ac-dubbo
   - [springboot快速集成dubbo](https://lazycece.github.io/2019/03/30/springboot快速集成dubbo/)
 - springboot-ac-rest
-  - wait
-  - wait
+  - [springboot中使用RestTemplate调用rest服务](https://lazycece.github.io/2019/05/22/springboot%E4%B8%AD%E4%BD%BF%E7%94%A8RestTemplate%E8%B0%83%E7%94%A8rest%E6%9C%8D%E5%8A%A1/)
 
 
 ## database
@@ -45,27 +44,19 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
   - [springboot中rabbitmq的集成与使用](https://lazycece.github.io/2019/04/06/springboot%E4%B8%ADrabbitmq%E7%9A%84%E9%9B%86%E6%88%90%E4%B8%8E%E4%BD%BF%E7%94%A8/)
 - springboot-ac-rocketmq
   - wait
-
-## transactions
-- springboot-ac-transactions
-  - wait
-
   
-## tool
+## email
 - springboot-ac-email
   - [springboot中实现发送邮件功能](https://lazycece.github.io/2019/05/21/springboot%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/)
+
+## task
 - springboot-ac-schedule
   - wait
+
+## log
 - springboot-ac-log
-  - wait
-  
-## actuator
+  - wait  
 
-## WebSocket
-
-## caching
-
-## WebFlux
 
 
 

@@ -17,7 +17,6 @@
     <modules>
         <module>springboot-ac-rest-server</module>
         <module>springboot-ac-rest-template</module>
-        <module>springboot-ac-rest-webclient</module>
     </modules>
 
 </project>

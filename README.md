@@ -21,11 +21,8 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
 ## service
 - springboot-ac-dubbo
   - [springboot快速集成dubbo](https://lazycece.github.io/2019/03/30/springboot快速集成dubbo/)
-- springboot-ac-resttemplate
+- springboot-ac-rest
   - wait
-- springboot-ac-webclient
-  - wait
-- springboot-ac-webservicetemplate
   - wait
 
 

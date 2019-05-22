@@ -33,6 +33,7 @@
         <module>springboot-ac-rabbitmq</module>
         <module>springboot-ac-rocketmq</module>
         <module>springboot-ac-email</module>
+        <module>springboot-ac-rest</module>
     </modules>
 
     <properties>

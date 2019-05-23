@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lazycece</groupId>
+        <artifactId>springboot-actual-combat</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>springboot-ac-log</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>springboot-ac-log</name>
+    <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>springboot-ac-log-log4j2</module>
+        <module>springboot-ac-log-logback</module>
+    </modules>
+</project>

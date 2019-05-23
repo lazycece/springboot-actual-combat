@@ -34,6 +34,7 @@
         <module>springboot-ac-rocketmq</module>
         <module>springboot-ac-email</module>
         <module>springboot-ac-rest</module>
+        <module>springboot-ac-log</module>
     </modules>
 
     <properties>

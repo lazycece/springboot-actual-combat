@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- scan 当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。-->
+<configuration scan="true" scanPeriod="60 seconds">
+    <!-- 开发自测环境由于路径不可用 无法生成滚动日志 可在ide中指定启动参数LOG_DIR LOG_NAME 生产环境由start.sh脚本生成配置路径 -->
+
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%cyan(%d{yyyyMMdd HH:mm:ss.SSS}) %magenta([%5.30thread] %20.35logger{30}-%L)-%highlight(%-5level):%msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- AllLog 按日滚动 -->
+    <appender name="all" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_DIR}/${LOG_NAME}/all.log</File>
+        <encoder>
+            <Pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%5.30thread] %20.35logger{30}-%L-%-5level: %msg%n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${LOG_NAME}/%d{yyyyMM,aux}/%d{yyyyMMdd}-all.zip</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 异常日志 -->
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <File>${LOG_DIR}/${LOG_NAME}/error.log</File>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{0} line%L - %msg%n</Pattern>
+        </layout>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${LOG_NAME}/%d{yyyyMM,aux}/%d{yyyyMMdd}-error.zip</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender> -->
+    <logger name="org.mongodb.driver" level="WARN" addtivity="true"/>
+
+    <!-- 根日志 -->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="all"/>
+        <appender-ref ref="error"/>
+    </root>
+</configuration>

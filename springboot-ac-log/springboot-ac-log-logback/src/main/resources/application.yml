@@ -1,1 +1,14 @@
+spring:
+  profiles:
+    active: dev
 
+logging:
+#  pattern:
+#    console:
+#    file:
+#  path: log/
+#  file: custom.log
+  level:
+#    root: info
+    com.lazycece: debug
+  config: classpath:logback-profile-line.xml

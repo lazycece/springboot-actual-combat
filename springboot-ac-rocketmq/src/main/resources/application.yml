@@ -1,0 +1,4 @@
+rocketmq:
+  name-server: 10.40.7.18:9876
+  producer:
+    group: rocketmq-group

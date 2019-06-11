@@ -1,0 +1,14 @@
+
+
+task:
+  cron: 0/1 * * * * *
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 1
+    execution:
+      pool:
+        max-size: 20
+        core-size: 10
+        keep-alive: 60s

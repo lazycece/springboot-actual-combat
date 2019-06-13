@@ -18,14 +18,12 @@ public class AsyncDemo implements CommandLineRunner {
 
     @Resource
     private AsyncRun asyncRun;
-    @Resource
-    private AsyncFuture asyncFuture;
 
     @Override
     public void run(String... args) throws Exception {
         System.out.println("begin");
-        asyncRun.run();
-        Future<String> future = asyncFuture.run();
+        asyncRun.async();
+        Future<String> future = asyncRun.asyncFuture();
         System.out.println("end");
         System.out.println(future.get(1, TimeUnit.SECONDS));
     }
@@ -34,15 +32,12 @@ public class AsyncDemo implements CommandLineRunner {
 @Component
 class AsyncRun {
     @Async
-    void run() {
+    void async() {
         System.out.println("async running");
     }
-}
 
-@Component
-class AsyncFuture {
     @Async
-    Future<String> run() {
+    Future<String> asyncFuture() {
         System.out.println("async-future running");
         return new AsyncResult<>("async-future run");
     }

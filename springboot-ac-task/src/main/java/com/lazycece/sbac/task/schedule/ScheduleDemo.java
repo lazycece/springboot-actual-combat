@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ScheduleDemo {
 
-//    @Scheduled(cron = "${task.cron}")
+    @Scheduled(cron = "${task.cron}")
     public void run() {
         System.out.println(" schedule running");
     }

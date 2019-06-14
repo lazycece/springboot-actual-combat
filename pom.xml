@@ -35,6 +35,7 @@
         <module>springboot-ac-email</module>
         <module>springboot-ac-rest</module>
         <module>springboot-ac-log</module>
+        <module>springboot-ac-task</module>
     </modules>
 
     <properties>

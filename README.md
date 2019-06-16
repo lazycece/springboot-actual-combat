@@ -33,7 +33,7 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
 - springboot-ac-elasticsearch
   - [springboot中elasticsearch的集成与使用](https://lazycece.github.io/2019/02/21/springboot中elasticsearch的集成与使用)
 - springboot-ac-redis
-  - wait
+  - [springboot中redis的集成与使用](https://lazycece.github.io/2019/06/16/springboot%E4%B8%ADredis%E7%9A%84%E9%9B%86%E6%88%90%E4%B8%8E%E4%BD%BF%E7%94%A8/)
 - springboot-ac-mongodb
   - [springboot中mongodb集成与使用](https://lazycece.github.io/2019/05/19/springboot%E4%B8%ADmongodb%E9%9B%86%E6%88%90%E4%B8%8E%E4%BD%BF%E7%94%A8/)
   - [springboot中mongodb多数据源集成](https://lazycece.github.io/2019/05/19/springboot%E4%B8%ADmongodb%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E9%9B%86%E6%88%90/)
@@ -43,7 +43,7 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
 - springboot-ac-rabbitmq
   - [springboot中rabbitmq的集成与使用](https://lazycece.github.io/2019/04/06/springboot%E4%B8%ADrabbitmq%E7%9A%84%E9%9B%86%E6%88%90%E4%B8%8E%E4%BD%BF%E7%94%A8/)
 - springboot-ac-rocketmq
-  - wait
+  - [springboot中rocketmq的集成与使用](https://lazycece.github.io/2019/06/16/springboot%E4%B8%ADrocketmq%E7%9A%84%E9%9B%86%E6%88%90%E4%B8%8E%E4%BD%BF%E7%94%A8/)
   
 ## email
 - springboot-ac-email
@@ -51,7 +51,8 @@ A project about [springboot2.x](https://spring.io/projects/spring-boot) actual c
 
 ## task
 - springboot-ac-task
-  - wait
+  - [springboot中任务异步执行](https://lazycece.github.io/2019/06/16/springboot%E4%B8%AD%E4%BB%BB%E5%8A%A1%E5%BC%82%E6%AD%A5%E6%89%A7%E8%A1%8C/)
+  - [springboot中执行定时任务](https://lazycece.github.io/2019/06/16/springboot%E4%B8%AD%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/)
 
 ## log
 - springboot-ac-log

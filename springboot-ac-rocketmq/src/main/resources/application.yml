@@ -1,4 +1,5 @@
 rocketmq:
-  name-server: 127.0.0.1:9876
+#  name-server: 127.0.0.1:9876
+  name-server: 10.40.7.18:9876
   producer:
     group: rocketmq-group

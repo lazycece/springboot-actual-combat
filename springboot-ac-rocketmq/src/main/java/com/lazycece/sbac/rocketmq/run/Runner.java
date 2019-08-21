@@ -1,5 +1,7 @@
 package com.lazycece.sbac.rocketmq.run;
 
+import com.lazycece.sbac.rocketmq.messagemodel.MessageModelProducer;
+import com.lazycece.sbac.rocketmq.offset.OffsetProducer;
 import com.lazycece.sbac.rocketmq.order.OrderProducer;
 import com.lazycece.sbac.rocketmq.simple.RocketmqProducer;
 import com.lazycece.sbac.rocketmq.tags.TagProducer;
@@ -25,12 +27,21 @@ public class Runner implements CommandLineRunner {
     private OrderProducer orderProducer;
     @Resource
     private TagProducer tagProducer;
+    @Resource
+    private OffsetProducer offsetProducer;
+    @Resource
+    private MessageModelProducer messageModelProducer;
 
     @Override
     public void run(String... args) throws Exception {
 //        rocketmqProducer.sync();
+//        rocketmqProducer.oneWay();
+//        rocketmqProducer.async();
+
 //        transactionProducer.produce();
 //        orderProducer.sendSyncOrderly();
-        tagProducer.sendTagsMessage();
+//        tagProducer.sendTagsMessage();
+        offsetProducer.send();
+//        messageModelProducer.send();
     }
 }

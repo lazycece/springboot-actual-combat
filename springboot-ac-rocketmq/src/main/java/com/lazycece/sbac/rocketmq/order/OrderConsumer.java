@@ -1,6 +1,7 @@
 package com.lazycece.sbac.rocketmq.order;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.spring.annotation.ConsumeMode;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-@RocketMQMessageListener(topic = "topic-orderly", consumerGroup = "orderly-consumer-group")
+@RocketMQMessageListener(topic = "topic-orderly",
+        consumerGroup = "orderly-consumer-group",consumeMode = ConsumeMode.ORDERLY)
 public class OrderConsumer implements RocketMQListener<String> {
 
     @Override

@@ -38,10 +38,10 @@ public class Runner implements CommandLineRunner {
 //        rocketmqProducer.oneWay();
 //        rocketmqProducer.async();
 
-//        transactionProducer.produce();
+        transactionProducer.produce();
 //        orderProducer.sendSyncOrderly();
 //        tagProducer.sendTagsMessage();
-        offsetProducer.send();
+//        offsetProducer.send();
 //        messageModelProducer.send();
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 public class DynamicDataSource extends AbstractRoutingDataSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DynamicDataSource.class);
 
-    private static final ThreadLocal<String> DATA_SOURCE_KEY = new ThreadLocal<>();
+    private static final ThreadLocal<String> DATA_SOURCE_KEY = ThreadLocal.withInitial(() -> MultiDataSource.MASTER_DATA_SOURCE);
 
     static void changeDataSource(String dataSourceKey) {
         DATA_SOURCE_KEY.set(dataSourceKey);

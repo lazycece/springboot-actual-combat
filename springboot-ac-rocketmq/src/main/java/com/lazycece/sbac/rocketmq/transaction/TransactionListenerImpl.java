@@ -29,7 +29,6 @@ public class TransactionListenerImpl implements RocketMQLocalTransactionListener
         // 模拟回查本地事务
         log.info("============== checkLocalTransaction");
 
-        // todo 收不到回查消息
 
         return RocketMQLocalTransactionState.COMMIT;
     }
